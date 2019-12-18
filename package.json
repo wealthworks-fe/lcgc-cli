@@ -1,6 +1,6 @@
 {
   "name": "lcgc-cli",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A framework base on umi",
   "engines": {
     "node": ">=8.0.0"
