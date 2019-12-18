@@ -22,5 +22,9 @@
   "devDependencies": {
     "np": "^5.2.1",
     "umi-lint": "^2.0.2"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "random-color": "^1.0.1"
   }
 }

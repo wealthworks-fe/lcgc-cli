@@ -3,7 +3,7 @@ const randomColor = require('random-color');
 const assert = require('assert');
 const chalk = require('chalk');
 
-module.exports = api => {
+module.exports = (api) => {
   const { paths, log } = api;
 
   return class Generator extends api.Generator {
@@ -27,7 +27,7 @@ Example:
         name: basename(path),
         color: randomColor().hexString(),
         isTypeScript: this.isTypeScript,
-        jsxExt
+        jsxExt,
       };
 
       this.fs.copyTpl(
