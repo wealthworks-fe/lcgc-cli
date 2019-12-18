@@ -9,6 +9,8 @@
     "lcgc": "cli.js"
   },
   "scripts": {
+    "lint": "umi-lint --eslint plugins",
+    "precommit": "umi-lint --staged --eslint --prettier --fix",
     "prepublishOnly": "np --no-cleanup --yolo --no-publish --tag",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +20,7 @@
   "author": "zhongxia",
   "license": "MIT",
   "devDependencies": {
-    "np": "^5.2.1"
+    "np": "^5.2.1",
+    "umi-lint": "^2.0.2"
   }
 }

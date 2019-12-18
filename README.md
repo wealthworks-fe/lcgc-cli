@@ -21,5 +21,10 @@ lcgc --version
 ```bash
 # 这样即可, 模板类型为 pug
 lcgc g pug event/demo
-```
 
+# 把早期的配置，转成 .umirc.js 配置
+lcgc g config
+
+# 修改文件名
+mv umirc.js .umirc.js
+```

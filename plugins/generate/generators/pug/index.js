@@ -1,59 +1,57 @@
-const { join, basename } = require("path");
-const randomColor = require("random-color");
-const assert = require("assert");
-const chalk = require("chalk");
+const { join, basename } = require('path')
+const randomColor = require('random-color')
+const assert = require('assert')
+const chalk = require('chalk')
 
 module.exports = api => {
-  const { paths, config, log } = api;
+  const { paths, log } = api
+
   return class Generator extends api.Generator {
     constructor(args, options) {
-      super(args, options);
+      super(args, options)
 
       assert(
-        typeof this.args[0] === "string",
+        typeof this.args[0] === 'string',
         `
-${chalk.underline.cyan("name")} should be supplied
+${chalk.underline.cyan('name')} should be supplied
 Example: 
-  umi g page users
-        `.trim()
-      );
-      if (config.routes) {
-        log.warn(
-          `You should config the routes in config.routes manunally since ${chalk.red(
-            "config.routes"
-          )} exists`
-        );
-        console.log();
-      }
+  umi g pug users
+        `.trim(),
+      )
     }
 
     writing() {
-      const path = this.args[0].toString();
-      const jsxExt = this.isTypeScript ? "tsx" : "jsx";
+      const path = this.args[0].toString()
+      const jsxExt = this.isTypeScript ? 'tsx' : 'jsx'
       const context = {
         name: basename(path),
         color: randomColor().hexString(),
         isTypeScript: this.isTypeScript,
         jsxExt
-      };
-
-      console.log(context);
+      }
 
       this.fs.copyTpl(
-        this.templatePath("page.js.tpl"),
+        this.templatePath('page.js.tpl'),
         join(paths.absPagesPath, `${path}.${jsxExt}`),
-        context
-      );
+        context,
+      )
       this.fs.copyTpl(
-        this.templatePath("page.less.tpl"),
+        this.templatePath('page.less.tpl'),
         join(paths.absPagesPath, `${path}.less`),
-        context
-      );
+        context,
+      )
       this.fs.copyTpl(
-        this.templatePath("page.pug.tpl"),
+        this.templatePath('page.pug.tpl'),
         join(paths.absPagesPath, `${path}.pug`),
-        context
-      );
+        context,
+      )
+
+      log.warn('Ignore the warning message above，because pug is a mpa page')
+      if (api.restart) {
+        api.restart('add new pages, restart dev server')
+      } else {
+        log.warn('api.restart is not exist, must restart dev server')
+      }
     }
-  };
-};
+  }
+}
