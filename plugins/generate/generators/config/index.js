@@ -54,6 +54,12 @@ module.exports = (api) => {
           path.join(paths.cwd, '.eslintrc'),
           {},
         );
+
+        this.fs.copyTpl(
+          this.templatePath('package.json.tpl'),
+          path.join(paths.cwd, 'package.json'),
+          {},
+        );
       } else {
         log.error('当前目录不存在 config.js 配置');
       }
