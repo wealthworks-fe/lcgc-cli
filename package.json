@@ -1,5 +1,5 @@
 {
-  "name": "@lcgc/cli",
+  "name": "lcgc-cli",
   "version": "0.1.1",
   "description": "A framework base on umi",
   "engines": {
@@ -9,7 +9,7 @@
     "lcgc": "cli.js"
   },
   "scripts": {
-    "prepublishOnly": "np --no-cleanup --yolo --no-publish",
+    "prepublishOnly": "np --no-cleanup --yolo --no-publish --tag",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
