@@ -1,9 +1,6 @@
 /**
  * 在这里注册命令工具需要的插件
  */
-
-const generator = require("./plugins/generate");
-
 const DEFAULT_CONFIG = {
   hash: true, // 生成的文件名加上 hash
   disableCSSModules: true, //不使用 CSS Module 否则需要改代码
@@ -21,12 +18,16 @@ const DEFAULT_CONFIG = {
 };
 
 module.exports = (api, options = { mpa: {}, cdn: {} }) => {
-  // 注册生成器
-  generator(api, options);
-
   let { config } = api;
   // 增加一些默认配置
   config = Object.assign(DEFAULT_CONFIG, config);
+
+  // 生成器插件注册
+  api.registerPlugin({
+    id: "lcgc:generate",
+    apply: require("./plugins/generate"),
+    opts: options.generate
+  });
 
   // 注册插件
   api.registerPlugin({

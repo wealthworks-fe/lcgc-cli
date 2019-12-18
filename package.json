@@ -2,15 +2,22 @@
   "name": "@lcgc/cli",
   "version": "1.0.0",
   "description": "A framework base on umi",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "bin": {
     "lcgc": "cli.js"
   },
   "scripts": {
+    "prepublishOnly": "np --no-cleanup --yolo --no-publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "umi"
   ],
   "author": "zhongxia",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "np": "^5.2.1"
+  }
 }
