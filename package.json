@@ -9,7 +9,7 @@
     "lcgc": "cli.js"
   },
   "scripts": {
-    "lint": "umi-lint --eslint plugins",
+    "lint": "umi-lint --eslint *{.js,.jsx}",
     "precommit": "umi-lint --staged --eslint --prettier --fix",
     "prepublishOnly": "np --no-cleanup --yolo --no-publish --tag",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "chalk": "^3.0.0",
-    "random-color": "^1.0.1"
+    "random-color": "^1.0.1",
+    "umi-plugin-cdn": "^1.1.0",
+    "umi-plugin-mpa-pug": "^0.2.5"
   }
 }
