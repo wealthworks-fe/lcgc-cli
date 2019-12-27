@@ -5,7 +5,6 @@ const chalk = require('chalk');
 
 module.exports = (api) => {
   const { paths, log } = api;
-
   return class Generator extends api.Generator {
     constructor(args, options) {
       super(args, options);
@@ -32,21 +31,20 @@ Example:
 
       this.fs.copyTpl(
         this.templatePath('page.js.tpl'),
-        join(paths.absPagesPath, `${path}.${jsxExt}`),
+        join(paths.absSrcPath, `${path}.${jsxExt}`),
         context,
       );
       this.fs.copyTpl(
         this.templatePath('page.less.tpl'),
-        join(paths.absPagesPath, `${path}.less`),
+        join(paths.absSrcPath, `${path}.less`),
         context,
       );
       this.fs.copyTpl(
         this.templatePath('page.pug.tpl'),
-        join(paths.absPagesPath, `${path}.pug`),
+        join(paths.absSrcPath, `${path}.pug`),
         context,
       );
 
-      log.warn('Ignore the warning message above，because pug is a mpa page');
       if (api.restart) {
         api.restart('add new pages, restart dev server');
       } else {

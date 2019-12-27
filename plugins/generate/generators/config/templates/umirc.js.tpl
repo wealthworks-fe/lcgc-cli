@@ -3,12 +3,6 @@
  * '/LCGC/npm-package/lcgc-cli/example/pages/common' => path.resolve(__dirname, './common')
  */
 module.exports = {
-  hash: true, 
-  disableCSSModules: true, 
-  treeShaking: true,
-  targets: {
-    browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 9', 'iOS >= 8', 'Android >= 4']
-  },
   alias: {
     'packages': '@lcgc/fe-package/lib',
     <% alias.forEach(function(item){ %>

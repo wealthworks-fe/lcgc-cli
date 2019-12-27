@@ -26,7 +26,7 @@
     "umi": "^2.12.5",
     "umi-lint": "^2.0.2",
     "umi-plugin-cdn": "^1.1.0",
-    "umi-plugin-mpa-pug": "^0.2.4",
+    "umi-plugin-mpa-pug": "^0.3.0",
     "umi-plugin-react": "^1.14.8"
   },
   "keywords": [],

@@ -25,8 +25,12 @@
   },
   "dependencies": {
     "chalk": "^3.0.0",
+    "execa": "^4.0.0",
+    "inquirer": "^7.0.1",
     "random-color": "^1.0.1",
+    "shelljs": "^0.8.3",
+    "umi": "^2.12.7",
     "umi-plugin-cdn": "^1.1.0",
-    "umi-plugin-mpa-pug": "^0.2.5"
+    "umi-plugin-mpa-pug": "^0.3.0"
   }
 }
