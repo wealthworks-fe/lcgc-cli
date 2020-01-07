@@ -21,6 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "np": "^5.2.1",
+    "umi": "^2.12.9",
     "umi-lint": "^2.0.2"
   },
   "dependencies": {
