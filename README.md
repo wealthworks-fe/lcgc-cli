@@ -8,10 +8,10 @@
 
 ```bash
 # 安装包
-npm install --global @lcgc/cli
+npm install --global lcgc-cli
 
 # 输出版本号则安装成功
-lcgc --version
+lcgc -v
 ```
 
 ## 如何生成多页面模板
@@ -19,12 +19,21 @@ lcgc --version
 > 实现防线，参照 [umi-build-dev/src/plugins/commands/generate](https://github.com/umijs/umi/tree/db13052359/packages/umi-build-dev/src/plugins/commands/generate)
 
 ```bash
-# 这样即可, 模板类型为 pug
+# 生成多页面的基本模板
 lcgc g pug event/demo
+
+# 生成单页面应用模板
+lcgc g spa event/spa
 
 # 把早期的配置，转成 .umirc.js 配置
 lcgc g config
 
 # 修改文件名
 mv umirc.js .umirc.js
+```
+
+## 初始化项目脚手架
+
+```bash
+lcgc init
 ```
