@@ -1,6 +1,6 @@
 {
   "name": "lcgc-cli",
-  "version": "0.2.0",
+  "version": "1.0.0-0",
   "description": "node 命令行工具，快速生成项目脚手架，快速生成页面模板",
   "engines": {
     "node": ">=8.0.0"
