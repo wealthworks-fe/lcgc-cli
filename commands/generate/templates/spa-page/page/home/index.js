@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { getHome } from "../../api";
-import "./index.less";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { getHome } from '../../api';
+import './index.less';
 
 export default () => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    getHome().then(data => {
+    getHome().then((data) => {
       setData(data);
     });
   }, []);

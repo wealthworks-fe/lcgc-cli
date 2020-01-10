@@ -1,4 +1,4 @@
-import "./index.less";
+import './index.less';
 
 export default ({ history }) => {
   return (
@@ -6,7 +6,7 @@ export default ({ history }) => {
       <h1>About</h1>
       <button
         onClick={() => {
-          history.push("/");
+          history.push('/');
         }}
       >
         Go to Home
