@@ -14,6 +14,7 @@ module.exports = {
     [
       'umi-plugin-mpa-pug',
       {
+        selectEntry:true,
         prefixPath: '',
         pagesPath: '<%- inputPath %>',
         commonChunks: {

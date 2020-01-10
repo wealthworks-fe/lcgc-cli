@@ -1,11 +1,28 @@
 #!/usr/bin/env node
 
-process.env.UMI_PLUGINS = require.resolve('./plugin');
-process.env.DISABLE_WARN = true;
+const commander = require('commander');
 
-// 基于 umi 的命令进行封装
-const umiBinPath = require.resolve('umi/bin/umi');
+const program = new commander.Command();
 
-require('child_process').fork(umiBinPath, process.argv.slice(2), {
-  stdio: 'inherit',
-});
+program.version('0.0.1');
+
+program
+  .command('init')
+  .description('init project with template')
+  .action(require('./commands/init'));
+
+program
+  .command('generate [type] [dest]')
+  .alias('g')
+  .description('generate normal page base code')
+  .action((type, dest) => {
+    // eslint-disable-next-line global-require
+    require('./commands/generate')(type, dest);
+  });
+
+program.parse(process.argv);
+
+// 未录入消息，默认输出 help
+if (!process.argv.slice(2).length) {
+  program.outputHelp();
+}

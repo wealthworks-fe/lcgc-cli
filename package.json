@@ -1,7 +1,7 @@
 {
   "name": "lcgc-cli",
-  "version": "0.2.0",
-  "description": "A framework base on umi",
+  "version": "1.0.0",
+  "description": "node 命令行工具，快速生成项目脚手架，快速生成页面模板",
   "engines": {
     "node": ">=8.0.0"
   },
@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "umi"
+    "cli"
   ],
   "author": "zhongxia",
   "license": "MIT",
@@ -24,13 +24,13 @@
     "umi-lint": "^2.0.2"
   },
   "dependencies": {
+    "ora": "^4.0.3",
     "chalk": "^3.0.0",
+    "commander": "^4.1.0",
+    "ejs": "^3.0.1",
     "execa": "^4.0.0",
     "inquirer": "^7.0.1",
     "random-color": "^1.0.1",
-    "shelljs": "^0.8.3",
-    "umi": "^2.12.7",
-    "umi-plugin-cdn": "^1.1.0",
-    "umi-plugin-mpa-pug": "^0.3.0"
+    "shelljs": "^0.8.3"
   }
 }
